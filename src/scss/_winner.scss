@@ -1,0 +1,129 @@
+/* Winner Page */
+body.winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  h1 {
+    font-family: 'Roboto Mono', monospace;
+  }
+}
+
+body.winner.you-win {
+  background: url('../assets/you-win.svg') left top no-repeat;
+  background-size: 50% 100%;
+}
+
+body.winner.computer-wins {
+  background: url('../assets/computer-wins.svg') right top no-repeat;
+  background-size: 50% 100%;
+}
+
+body.computer-wins h1.you-win,
+body.computer-wins h1.tie,
+body.you-win h1.computer-wins,
+body.you-win h1.tie {
+  visibility: hidden;
+}
+
+body.its-tie h1.you-win,
+body.its-tie h1.computer-wins {
+  visibility: hidden;
+}
+
+body.winner .wrapper {
+  display: flex;
+  gap: 20%;
+  position: relative;
+  width: 90%;
+  @media screen and (min-width: 920px) {
+    width: 80%;
+    gap: 150px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.winner .wrapper .tie {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+body.winner img {
+  mix-blend-mode: multiply;
+}
+
+.your-pick,
+.computer-pick {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+  @media screen and (min-width: 650px) {
+    gap: 40px;
+  }
+}
+
+.you-win,
+.computer-wins{
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+  @media screen and (min-width: 650px) {
+    font-size: 2rem;
+  }
+}
+
+.computer-pick img {
+  transform: scaleX(-1);
+  /* transform: scaleY(-1); */
+}
+
+.play-again {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -20%;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  padding: 1em 2.2em;
+  @media screen and (min-width: 650px) {
+    font-size: 1.2rem;
+    bottom: 0;
+  }
+  @media screen and (min-width: 920px) {
+    font-size: 1.7rem;
+  }
+  border: 2px solid black;
+  background: none;
+  cursor: pointer;
+}
+
+.play-again:hover {
+  background: black;
+  color: white;
+}
+
+
+.your-pick img,
+.computer-pick img {
+  display: inline-block;
+  min-height: 130px;
+  min-width: 100px;
+  max-height: 100%;
+  max-width: 100%;
+  @media screen and (min-width: 920px) {
+    min-height: 60%;
+    min-width: 40%;
+
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+.computer-pick img {
+  margin-left: auto;
+}
